@@ -1,0 +1,33 @@
+services:
+  etl:
+    build: ./my_data
+    container_name: extract_transform
+    volumes:
+      - ./my_data:/app
+    networks:
+      - superset_default
+
+  my_db:
+    image: postgres:16
+    container_name: dash_data_db
+    env_file:
+      - ./my_data/.env
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    volumes:
+      - dash_data:/var/lib/postgresql/data
+      - ./my_data/my_db-init:/docker-entrypoint-initdb.d
+    networks:
+      - superset_default
+    depends_on:
+      etl:
+        condition: service_completed_successfully
+
+volumes:
+  dash_data:
+
+networks:
+  superset_default:
+    external: true
+    name: superset_default
