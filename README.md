@@ -74,6 +74,20 @@ docker-compose -f docker-compose-image-tag.yml -f docker-compose.custom.yml up -
 
 8. Все готово к построению интерактивного дашборда!
 
-## Дашборд
+## Дашборд (скриншоты проекта)
+<div align="center">
+  <strong>Общий вид дашборда (стр. 1)</strong><br>
+  <img src="assets/superset2.png" alt="Общий вид дашборда (страница 1)" width="70%">
+
+  <strong>Пример работы кастомного фильтра на основе Jinja</strong><br>
+  <img src="assets/superset5.png" alt="Пример работы кастомного фильтра на основе Jinja" width="70%">
+
+  <strong>Общий вид дашборда (стр. 2, chart #1)</strong><br>
+  <img src="assets/superset3.png" alt="Общий вид дашборда (стр. 2, chart #1)" width="70%">
+    
+  <strong>Общий вид дашборда (стр. 2, chart #2)</strong><br>
+  <img src="assets/superset4.png" alt="Общий вид дашборда (стр. 2, chart #2)" width="70%">
+</div>
+
 ## Лицензия
 Этот проект распространяется под лицензией MIT.
